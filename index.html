@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <title>Pocket Money !!</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -298,6 +298,60 @@
       animation:none !important;
     }
   }
+
+/* ---------- MOBILE OPTIMIZATIONS ---------- */
+  @media (max-width: 480px) {
+    body {
+      padding: 16px 8px; 
+      gap: 12px; /* Adds a small gap between the text card and the images */
+      align-items: center;
+    }
+    
+    /* 1. Force the main text card to take up all remaining space */
+    .ticket-card {
+      flex: 1; 
+      max-width: none; /* Removes the desktop width limit */
+      border-radius: 20px;
+    }
+    
+    /* 2. Restrict the scrolling images on the right to ~1.25 image widths */
+    .wallet-marquee {
+      width: 130px; 
+      flex-shrink: 0; /* Prevents the images from getting squished */
+      margin-top: 0; /* Aligns it properly with the card */
+    }
+    
+    /* 3. Adjust inner spacing so text fits beautifully in the new layout */
+    .ticket-top {
+      padding: 20px 14px 12px; 
+    }
+    .ticket-top .headline {
+      font-size: 20px; 
+    }
+    .ticket-bottom {
+      padding: 16px 14px 20px;
+    }
+    
+    /* 4. Keep the QR code large and scannable */
+    .qr-frame {
+      width: 160px; 
+      height: 160px;
+      margin-bottom: 12px;
+      padding: 10px;
+    }
+    .upi-row {
+      padding: 6px 6px 6px 12px;
+      margin-bottom: 14px;
+    }
+    .upi-row span {
+      font-size: 12px; /* Slightly smaller to prevent cut-offs */
+    }
+    .upi-row button {
+      min-height: 44px;
+      padding: 10px 16px;
+    }
+  }
+
 </style>
 </head>
 <body>
